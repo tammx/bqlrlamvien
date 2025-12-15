@@ -72,7 +72,8 @@ button.accept-policy {
 }
 
 li.nav-item {
-    margin: 0 20px;
+    /*margin: 0 20px;*/
+    margin-right:25px;
     text-transform: uppercase;
     font-weight: 600;
 }

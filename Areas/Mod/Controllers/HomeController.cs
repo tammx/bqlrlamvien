@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace minhlamcons.Areas.Mod.Controllers
 {
     [Area("Mod")]
+    [Route("Mod")]
     [Authorize(Roles = "Moderator")]
     public class HomeController : Controller
     {
