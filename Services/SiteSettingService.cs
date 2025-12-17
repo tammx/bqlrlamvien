@@ -21,5 +21,15 @@ namespace minhlamcons.Services
             var slider = _db.TbSiteSettings.FirstOrDefault(x => !x.Delete && x.Id == SiteSettingCode.SLIDER);
             return slider != null && !string.IsNullOrEmpty(slider.Content) ? slider.Content.Split(",").ToList() : null;
         }
+        public List<string> GetYoutubeVideo()
+        {
+            var rs = _db.TbSiteSettings.FirstOrDefault(x => !x.Delete && x.Id == SiteSettingCode.YT_VIDEO);
+            return rs != null && !string.IsNullOrEmpty(rs.Content) ? rs.Content.Split(",").ToList() : null;
+        }
+        public List<string> GetImageGallery()
+        {
+            var slider = _db.TbSiteSettings.FirstOrDefault(x => !x.Delete && x.Id == SiteSettingCode.IMG_GALLERY);
+            return slider != null && !string.IsNullOrEmpty(slider.Content) ? slider.Content.Split(",").ToList() : null;
+        }
     }
 }

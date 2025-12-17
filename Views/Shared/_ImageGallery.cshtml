@@ -1,0 +1,30 @@
+﻿@model List<string>
+<link href="~/css/venobox.min.css" rel="stylesheet" />
+<script src="~/js/venobox.min.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-12 homepage">
+            <p class="title"><span style="border-bottom: solid 6px #2596be !important;">Thư viện hình ảnh</span> <img src="~/img/ico_go.png" /></p>
+        </div>
+    </div>
+    <div class="row" style="margin-right:0!important;margin-left:0!important;clear:both;margin-top:45px">
+        <div class="col-md-12" style="padding:0">
+            @foreach (var item in Model)
+            {
+                <a class="my-image-links" data-gall="gallery01" href="~/uploads/sitesetting/@item">
+                    <img style="max-width:260px" src="~/uploads/sitesetting/@item">
+                </a>
+            }
+            
+        </div>
+    </div>
+</div>
+<script>
+    new VenoBox({
+        selector: '.my-image-links',
+        numeration: true,
+        infinigall: true,
+        share: true,
+        spinner: 'rotating-plane'
+    });
+</script>

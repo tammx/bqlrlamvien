@@ -18,6 +18,10 @@ namespace minhlamcons.Models
 
         [Description("MinhLam: Tin mặc định")]
         MinhLam_TinMacDinh,
+        [Description("MinhLam: Thư viện hình ảnh")]
+        MinhLam_ImageGallery,
+        [Description("MinhLam: Thư viện video")]
+        MinhLam_VideoGallery,
     }
     public enum SiteSettingCode
     {
@@ -87,5 +91,10 @@ namespace minhlamcons.Models
         SLOGAN = 34,
         [Description("Link footer")]
         LINK_FOOTER = 35,
+
+        [Description("Youtube video")]
+        YT_VIDEO = 40,
+        [Description("Album ảnh")]
+        IMG_GALLERY = 41,
     };
 }

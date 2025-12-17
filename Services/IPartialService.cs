@@ -8,5 +8,7 @@ namespace minhlamcons.Services
         List<HeaderViewModel> GetHeader();
         //FooterViewModel GetFooter();
         SliderViewModel GetSlider();
+        List<string> GetYoutubeVideo();
+        List<string> GetImageGallery();
     }
 }

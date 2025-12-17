@@ -35,5 +35,18 @@ namespace minhlamcons.Services
             var rs = data.GetBannerImage().Where(x=>x!="").ToList();
             return new SliderViewModel { LstBanner = rs, Slogan = slogan };
         }
+        public List<string> GetYoutubeVideo()
+        {
+            ISiteSettingService data = new SiteSettingService(_db);
+            var rs = data.GetYoutubeVideo().Where(x => x != "").ToList();
+            return rs;
+        }
+        public List<string> GetImageGallery()
+        {
+            ISiteSettingService data = new SiteSettingService(_db);
+            var rs = data.GetImageGallery().Where(x => x != "").ToList();
+            return rs;
+        }
+        
     }
 }

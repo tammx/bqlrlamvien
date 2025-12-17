@@ -1,0 +1,16 @@
+﻿@model List<string>
+<div class="container">
+    <div class="row">
+        <div class="col-12 homepage">
+            <p class="title"><span style="border-bottom: solid 6px #2596be !important;">Thư viện video</span> <img src="~/img/ico_go.png" /></p>
+        </div>
+    </div>
+    <div class="row" style="margin-right:0!important;margin-left:0!important;clear:both;margin-top:45px">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6" style="padding:0">
+                <iframe width="99%" height="315" src="https://www.youtube.com/embed/@item.Trim()" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        }
+    </div>
+</div>

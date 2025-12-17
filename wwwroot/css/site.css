@@ -622,6 +622,15 @@ footer .ico a {
 #frmYoutube {
     height: 550px;
 }
+.bg-forest {
+    background-color: #1e6730;
+}
+a.nav-link {
+    color:#ffffff!important;
+}
+.my-image-links img {
+    margin-bottom:5px;
+}
 @media all and (min-width: 992px) {
     .perfect-1 {
         display:block;

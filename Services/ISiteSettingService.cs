@@ -6,7 +6,9 @@ namespace minhlamcons.Services
     public interface ISiteSettingService
     {
         Dictionary<SiteSettingCode, string> GetSiteSetting();
-
         List<string> GetBannerImage();
+        List<string> GetYoutubeVideo();
+        List<string> GetImageGallery();
+        
     }
 }

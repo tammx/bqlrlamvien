@@ -1,4 +1,5 @@
-﻿@model ShowPageViewModel
+﻿@inject minhlamcons.Services.IPartialService PartialService
+@model ShowPageViewModel
 <div class="container">
     @if (Model != null)
     {
@@ -21,6 +22,16 @@
         else if (Model.PageType == minhlamcons.Models.PageType.MinhLam_TuyenDung && Model.Article == false)
         {
             @Html.Partial("_MinhLam_TuyenDung", (NewsViewModel)Model.Data);
+        }
+        else if (Model.PageType == minhlamcons.Models.PageType.MinhLam_VideoGallery)
+        {
+            var data = PartialService.GetYoutubeVideo();
+            @Html.Partial("_VideoGallery", data);
+        }
+        else if (Model.PageType == minhlamcons.Models.PageType.MinhLam_ImageGallery)
+        {
+            var data = PartialService.GetImageGallery();
+            @Html.Partial("_ImageGallery", data);
         }
         else
         {

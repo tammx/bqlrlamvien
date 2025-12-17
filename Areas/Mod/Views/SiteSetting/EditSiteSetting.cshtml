@@ -35,7 +35,7 @@
                             <input asp-for="Content" class="form-control custom-file-input" id="files" name="files" type="file" onchange="uploadImage();" accept="image/*" />
                         </div>
                     }
-                    else if (Model.Id == SiteSettingCode.SLIDER)
+                    else if (Model.Id == SiteSettingCode.SLIDER || Model.Id == SiteSettingCode.IMG_GALLERY)
                     {
                         <label>Nội dung</label>
                         var banerImage = Model.Content?.Split(',');
