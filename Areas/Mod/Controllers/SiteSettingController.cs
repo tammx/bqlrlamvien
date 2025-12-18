@@ -15,6 +15,7 @@ using System.IO;
 using System.Linq;
 using System.Drawing;
 using LazZiya.ImageResize;
+using ImageMagick;
 
 namespace minhlamcons.Areas.Mod.Controllers
 {
@@ -147,7 +148,18 @@ namespace minhlamcons.Areas.Mod.Controllers
                                 var img = ImageResize.Scale(uploadedImage, BanerImageWidth, BanerImageHeight);
                                 img.SaveAs(filePath);
                             }
-                            // TODO: Set width and height
+                            else if (upload.ContentType.StartsWith("image"))
+                            {
+                                stream.Position = 0;
+                                // Resize + compress bằng Magick.NET cho mọi ảnh (kể cả RAW/DNG)
+                                ImageHelper.ResizeImageMagick(
+                                    stream,
+                                    filePath,
+                                    maxWidth: 1280,
+                                    maxHeight: 1280,
+                                    quality: 75
+                                );
+                            }
                             else
                             {
                                 uploadedImage.SaveAs(filePath);

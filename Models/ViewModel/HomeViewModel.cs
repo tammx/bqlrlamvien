@@ -11,6 +11,9 @@ namespace minhlamcons.Models.ViewModel
         public string HOME_B2 { get; set; }
         public string HOME_B3 { get; set; }
         public string HOME_B4 { get; set; }
+        public string HOME_QC1 { get; set; }
+        public string HOME_QC2 { get; set; }
+        public string HOME_QC3 { get; set; }
         public string MAP { get; set; }
         public string SEOTitle { get; set; }
         public string SEODescription { get; set; }

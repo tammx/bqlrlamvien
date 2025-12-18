@@ -104,6 +104,46 @@ function uploadBanerImage() {
     });
 }
 
+function uploadGalleryImage() {
+    var input = document.getElementById('image-slider');
+    var files = input.files;
+    var formData = new FormData();
+
+    for (var i = 0; i != files.length; i++) {
+        formData.append("files", files[i]);
+        formData.append("loaiCauHinh", "GALLERY");
+    }
+    $.ajax({
+        url: urls.UploadImage,
+        data: formData,
+        processData: false,
+        async: false,
+        contentType: false,
+        type: "POST",
+        success: function (res) {
+            if (res) {
+                var noiDungVal = $('#Content').val();
+                noiDungVal += res + ',';
+                $('#Content').val(noiDungVal);
+                $('.image_container').append('<input type="checkbox" class="remove-image-check" value="' + res + '"/><img height="150" id="' + res + '" class="img_ct_up" src="/uploads/sitesetting/' + res + '" />');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Upload hình ảnh thành công!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+            else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Upload hình ảnh thất bại!',
+                });
+            }
+        }
+    });
+}
+
 function removeImage() {
     var noiDungVal = $('#Content').val();
     $.each($(".remove-image-check:checked"), function () {

@@ -73,6 +73,10 @@ namespace minhlamcons.Controllers
             data.HOME_B3 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B3) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B3] : "";
             data.HOME_B4 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B4) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B4] : "";
             data.MAP = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.MAP) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.MAP] : "";
+
+            data.HOME_QC1 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_QC1) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_QC1] : "";
+            data.HOME_QC2 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_QC2) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_QC2] : "";
+            data.HOME_QC3 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_QC3) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_QC3] : "";
             return View(data);
         }
 

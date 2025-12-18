@@ -58,25 +58,25 @@ namespace minhlamcons.Models
         [Description("Thông tin khác")]
         THONGTINKHAC = 17,
 
-        [Description("Banner Về chúng tôi")]
-        SLIDER_VCT = 18,
-        [Description("Banner Hồ sơ năng lực")]
-        SLIDER_HSNL = 19,
-        [Description("Banner Profile")]
-        SLIDER_Profile = 20,
-        [Description("Banner Nhân sự")]
-        SLIDER_NS = 21,
-        [Description("Banner Đối tác")]
-        SLIDER_DT = 22,
-        [Description("Banner Dự án")]
-        SLIDER_DA = 24,
-        [Description("Banner Tin nội bộ")]
-        SLIDER_TNB = 25,
-        [Description("Banner Tin tức & sự kiện")]
-        SLIDER_TTSK = 26,
-        [Description("Banner Tuyển dụng")]
-        SLIDER_TD = 27,
-        [Description("Banner trang chủ (1663 x 600 px)")]
+        [Description("Hình banner trang chủ")]
+        SLIDER_1 = 18,
+        //[Description("Banner 2")]
+        //SLIDER_2 = 19,
+        //[Description("Banner 3")]
+        //SLIDER_3 = 20,
+        //[Description("Banner Nhân sự")]
+        //SLIDER_NS = 21,
+        //[Description("Banner Đối tác")]
+        //SLIDER_DT = 22,
+        //[Description("Banner Dự án")]
+        //SLIDER_DA = 24,
+        //[Description("Banner Tin nội bộ")]
+        //SLIDER_TNB = 25,
+        //[Description("Banner Tin tức & sự kiện")]
+        //SLIDER_TTSK = 26,
+        //[Description("Banner Tuyển dụng")]
+        //SLIDER_TD = 27,
+        [Description("Slider trang chủ (1663 x 600 px)")]
         SLIDER = 28,
 
         [Description("Trang chủ - Dịch vụ của chúng tôi")]
@@ -91,6 +91,12 @@ namespace minhlamcons.Models
         SLOGAN = 34,
         [Description("Link footer")]
         LINK_FOOTER = 35,
+        [Description("Trang chủ - Banner 1")]
+        HOME_QC1 = 36,
+        [Description("Trang chủ - Banner 2")]
+        HOME_QC2 = 37,
+        [Description("Trang chủ - Banner 3")]
+        HOME_QC3 = 38,
 
         [Description("Youtube video")]
         YT_VIDEO = 40,

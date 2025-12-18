@@ -7,7 +7,7 @@
     <meta http-equiv="description" name="description" content="@Model.SEODescription" />
     <meta name="author" content="MINHLAMCONS.COM">
 }
-@section Css{
+@section Css {
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     <style>
@@ -20,8 +20,28 @@
         }
     </style>
 }
+@if (!String.IsNullOrEmpty(Model.HOME_QC1))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bannerqc" style="padding:0">
+                @Html.Raw(Model.HOME_QC1)
+            </div>
+        </div>
+    </div>
+}
 @Html.Raw(Model.HOME_B1)
 @Html.Raw(Model.HOME_B2)
+@if (!String.IsNullOrEmpty(Model.HOME_QC1))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12 bannerqc" style="padding:0">
+                @Html.Raw(Model.HOME_QC2)
+            </div>
+        </div>
+    </div>
+}
 <div class="container">
     <div class="row" style="margin-right:0!important;margin-left:0!important;clear:both;margin-top:45px">
         <div class="col-md-12 homepage" style="padding:0">
@@ -36,7 +56,7 @@
                     <div>
                         <a style="text-decoration:none;color:#000;font-weight:500" href="@item.Url">
                             <img class="img-fluid" style="min-height:270px" src="~/uploads/news/@item.Image">
-                            <p style="margin-top:5px" title="@item.Name">@(item.Name.Length>37? (item.Name.Substring(0, 36) + "...") : item.Name)</p>
+                            <p style="margin-top:5px" title="@item.Name">@(item.Name.Length > 37 ? (item.Name.Substring(0, 36) + "...") : item.Name)</p>
                             <hr style="float:left" />
                         </a>
                     </div>
@@ -56,10 +76,10 @@
                     <div style="background-image: url(../uploads/news/@Model.LST2.News[0].Image);background-size: cover;height:240px"></div>
                     <div>
                         <a style="text-decoration: none;color: #000;padding-top: 10px;display: block;" href="@Model.LST2.News[0].Url">
-                            <p class="title">@(Model.LST2.News[0].Name.Length>30? (Model.LST2.News[0].Name.Substring(0, 30) + "...") : Model.LST2.News[0].Name)</p>
+                            <p class="title">@(Model.LST2.News[0].Name.Length > 30 ? (Model.LST2.News[0].Name.Substring(0, 30) + "...") : Model.LST2.News[0].Name)</p>
                         </a>
-                        <hr/>
-                        <p class="des">@(Model.LST2.News[0].Des.Length>150?(Model.LST2.News[0].Des.Substring(0,150)+"...") : Model.LST2.News[0].Des)</p>
+                        <hr />
+                        <p class="des">@(Model.LST2.News[0].Des.Length > 150 ? (Model.LST2.News[0].Des.Substring(0, 150) + "...") : Model.LST2.News[0].Des)</p>
                     </div>
                 </div>
                 <div class="col-md-6" style="padding:0;padding-left:15px">
@@ -97,6 +117,15 @@
                     @Html.Raw(Model.HOME_B4)
                 </div>
             </div>
+            @if (!String.IsNullOrEmpty(Model.HOME_QC1))
+            {
+                <div class="row">
+                    <div class="col-12 bannerqc" style="padding:0">
+                        @Html.Raw(Model.HOME_QC3)
+                    </div>
+                </div>
+            }
+            
             <div id="lienhe" class="row" style="margin-top:15px">
                 <div class="col-md-6 lienhebg">
                     <div class="row">

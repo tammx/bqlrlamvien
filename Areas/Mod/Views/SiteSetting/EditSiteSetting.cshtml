@@ -35,7 +35,7 @@
                             <input asp-for="Content" class="form-control custom-file-input" id="files" name="files" type="file" onchange="uploadImage();" accept="image/*" />
                         </div>
                     }
-                    else if (Model.Id == SiteSettingCode.SLIDER || Model.Id == SiteSettingCode.IMG_GALLERY)
+                    else if (Model.Id == SiteSettingCode.SLIDER || Model.Id == SiteSettingCode.SLIDER_1)
                     {
                         <label>Nội dung</label>
                         var banerImage = Model.Content?.Split(',');
@@ -55,6 +55,27 @@
                         </div>
                         <button type="button" class="btn btn-danger btn-remove-img" onclick="removeImage()">Remove</button>
                         <div class="custom-file"><input class="form-control custom-file-input" id="image-slider" accept="image/*" type="file" onchange="uploadBanerImage();" /></div>
+                    }
+                    else if (Model.Id == SiteSettingCode.IMG_GALLERY)
+                    {
+                        <label>Nội dung</label>
+                        var banerImage = Model.Content?.Split(',');
+                        <input type="text" asp-for="Content" class="form-control" style="margin-bottom: 5px;" readonly>
+                        <div class="image_container">
+                            @if (banerImage != null && banerImage.Any())
+                            {
+                                foreach (var item in banerImage)
+                                {
+                                    if (!string.IsNullOrEmpty(item))
+                                    {
+                                        <input type="checkbox" class="remove-image-check" value="@item" />
+                                        <img height="150" id="@item" class="img_ct_up" src="/uploads/sitesetting/@item" />
+                                    }
+                                }
+                            }
+                        </div>
+                        <button type="button" class="btn btn-danger btn-remove-img" onclick="removeImage()">Remove</button>
+                        <div class="custom-file"><input class="form-control custom-file-input" id="image-slider" accept="image/*" type="file" onchange="uploadGalleryImage();" /></div>
                     }
                     else
                     {
