@@ -110,13 +110,15 @@
     </div>
     <div id="doi-tac" class="row" style="margin-right:0!important;margin-left:0!important;margin-top:45px">
         <div class="col-md-12 homepage">
-            <p class="title"><span style="border-bottom: solid 6px #2596be !important;">ĐỐI TÁC</span> <img src="~/img/ico_go.png" /></p>
-            @*<center><hr /></center>*@
-            <div class="row wrap_partner">
-                <div class="col-md-12 partner">
-                    @Html.Raw(Model.HOME_B4)
+            @if (!String.IsNullOrEmpty(Model.HOME_B4))
+            {
+                <p class="title"><span style="border-bottom: solid 6px #2596be !important;">ĐỐI TÁC</span> <img src="~/img/ico_go.png" /></p>
+                <div class="row wrap_partner">
+                    <div class="col-md-12 partner">
+                        @Html.Raw(Model.HOME_B4)
+                    </div>
                 </div>
-            </div>
+            }
             @if (!String.IsNullOrEmpty(Model.HOME_QC1))
             {
                 <div class="row">

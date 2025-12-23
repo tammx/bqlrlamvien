@@ -484,10 +484,12 @@ footer .ico a {
 }
 
 .tintuchome .item {
-    background-color: #7fc7f5;
-    color: #084973;
+    background-color: #2f9147;
+    color: #fff;
 }
-
+.tintuchome .item a {
+    color: #fff;
+}
 .tintuchome .item img {
     min-height: 105px;
 }
