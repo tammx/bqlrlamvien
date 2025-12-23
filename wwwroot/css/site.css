@@ -353,22 +353,22 @@ footer .ico a {
 }
 
 .homepage .block {
-    text-align: center;
+    text-align: justify-all;
 }
 
-    .homepage .block .content {
-        margin: 5px 0;
-        font-size: .8em;
-        text-align: justify;
-    }
-    .homepage .block a {
-        text-decoration: none !important;
-    }
-    .homepage .block .title {
-        font-size: 1em;
-        margin: 5px 0;
-        color:#000;
-    }
+.homepage .block .content {
+    margin: 5px 0;
+    font-size: .8em;
+    text-align: justify;
+}
+.homepage .block a {
+    text-decoration: none !important;
+}
+.homepage .block .title {
+    font-size: 1em;
+    margin: 5px 0;
+    color:#000;
+}
 
 .homepage .partner {
     padding: 0;
