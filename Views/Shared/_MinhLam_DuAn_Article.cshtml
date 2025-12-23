@@ -6,7 +6,7 @@
     <meta property="og:image" content="@Model.News.Image" />
     <meta http-equiv="keywords" name="keywords" content="@Model.News.SEOKeyword" />
     <meta http-equiv="description" name="description" content="@Model.News.SEODescription" />
-    <meta name="author" content="MINHLAMCONS.COM">
+    <meta name="author" content="bqlrphongholamvien.vn">
 }
 <div class="row">
     <div class="col-md-12">
@@ -16,8 +16,6 @@
                 {
                     <p class="posttitle">@Model.News.Name</p>
                     <hr class="postline" />
-
-
                     <p>@Html.Raw(minhlamcons.Extensions.StringProcessingExtenssion.processed_img(Model.News.Content))</p>
                 }
             </div>

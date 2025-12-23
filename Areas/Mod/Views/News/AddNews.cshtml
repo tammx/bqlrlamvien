@@ -60,22 +60,22 @@
                     <p>--SEO--</p>
                     <div class="form-group">
                         <label asp-for="NewsDetail.SEOTitle"></label>
-                        <input asp-for="NewsDetail.SEOTitle" class="form-control" />
+                        <input id="txtSEOTitle" asp-for="NewsDetail.SEOTitle" class="form-control" />
                         <span asp-validation-for="NewsDetail.SEOTitle" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="NewsDetail.SEODescription"></label>
-                        <input asp-for="NewsDetail.SEODescription" class="form-control" />
+                        <input id="txtSEODescription" asp-for="NewsDetail.SEODescription" class="form-control" />
                         <span asp-validation-for="NewsDetail.SEODescription" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="NewsDetail.SEOKeyword"></label>
-                        <input asp-for="NewsDetail.SEOKeyword" class="form-control" />
+                        <input id="txtSEOKeyword" asp-for="NewsDetail.SEOKeyword" class="form-control" />
                         <span asp-validation-for="NewsDetail.SEOKeyword" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="NewsDetail.H1Tag"></label>
-                        <input asp-for="NewsDetail.H1Tag" class="form-control" />
+                        <input id="txtH1Tag" asp-for="NewsDetail.H1Tag" class="form-control" />
                         <span asp-validation-for="NewsDetail.H1Tag" class="text-danger"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Thêm</button>
@@ -90,15 +90,20 @@
         filebrowserUploadUrl: '/CKEditorUpload/UploadImage/ckeditor'
     });
     function generateUrl() {
+        var title = $('#txtName').val();
         $.ajax({
             type: "post",
             url: "/Mod/News/GenerateUrl",
-            data: { text: $('#txtName').val() },
+            data: { text: title },
             success: function (resp) {
                 console.log(resp);
                 $('#txtUrl').val(resp);
             }
         });
+        $('#txtSEOTitle').val(title);
+        $('#txtSEODescription').val(title);
+        $('#txtSEOKeyword').val(title);
+        $('#txtH1Tag').val(title);
     }
 </script>
 

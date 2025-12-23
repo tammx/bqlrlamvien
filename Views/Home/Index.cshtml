@@ -5,7 +5,7 @@
     <meta property="og:description" content="@Model.SEODescription" />
     <meta http-equiv="keywords" name="keywords" content="@Model.SEOKeyword" />
     <meta http-equiv="description" name="description" content="@Model.SEODescription" />
-    <meta name="author" content="MINHLAMCONS.COM">
+    <meta name="author" content="bqlrphongholamvien.vn">
 }
 @section Css {
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -55,7 +55,7 @@
                 {
                     <div>
                         <a style="text-decoration:none;color:#000;font-weight:500" href="@item.Url">
-                            <img class="img-fluid" style="min-height:270px" src="~/uploads/news/@item.Image">
+                            <img class="img-fluid" style="min-height:270px" src='@(!String.IsNullOrEmpty(item.Image)?"~/uploads/news/"+item.Image:"~/img/noimage.png")'>
                             <p style="margin-top:5px" title="@item.Name">@(item.Name.Length > 37 ? (item.Name.Substring(0, 36) + "...") : item.Name)</p>
                             <hr style="float:left" />
                         </a>
@@ -73,7 +73,8 @@
             @*<center><hr /></center>*@
             <div class="row tintuchome">
                 <div class="col-md-6 bignews">
-                    <div style="background-image: url(../uploads/news/@Model.LST2.News[0].Image);background-size: cover;height:240px"></div>
+                    @* <div style="background-image: url(../uploads/news/@Model.LST2.News[0].Image);background-size: cover;height:240px"></div> *@
+                    <div style='background-image: url(@(!String.IsNullOrEmpty(Model.LST2.News[0].Image)?"../uploads/news/"+Model.LST2.News[0].Image:"~/img/noimage.png"));background-size: cover;height:240px'></div>
                     <div>
                         <a style="text-decoration: none;color: #000;padding-top: 10px;display: block;" href="@Model.LST2.News[0].Url">
                             <p class="title">@(Model.LST2.News[0].Name.Length > 30 ? (Model.LST2.News[0].Name.Substring(0, 30) + "...") : Model.LST2.News[0].Name)</p>
@@ -84,19 +85,21 @@
                 </div>
                 <div class="col-md-6" style="padding:0;padding-left:15px">
                     <div class="row item">
-                        <div class="col-md-4 col-sm-12 img"><img class="img-fluid" style="height:126px" src="~/uploads/news/@Model.LST2.News[1].Image" /></div>
+                        <div class="col-md-4 col-sm-12 img">
+                            <img class="img-fluid" style="height:126px" src='@(!String.IsNullOrEmpty(Model.LST2.News[1].Image)?("~/uploads/news/"+Model.LST2.News[1].Image):"~/img/noimage.png")' />
+                        </div>
                         <div class="col-md-8 col-sm-12 text">
                             <a href="@Model.LST2.News[1].Url">@Model.LST2.News[1].Name</a>
                         </div>
                     </div>
                     <div class="row item middle">
-                        <div class="col-md-4 col-sm-12 img"><img class="img-fluid" src="~/uploads/news/@Model.LST2.News[2].Image" /></div>
+                        <div class="col-md-4 col-sm-12 img"><img class="img-fluid" src='@(!String.IsNullOrEmpty(Model.LST2.News[2].Image)?("~/uploads/news/"+Model.LST2.News[2].Image):"~/img/noimage.png")' /></div>
                         <div class="col-md-8 col-sm-12 text">
                             <a href="@Model.LST2.News[2].Url">@Model.LST2.News[2].Name</a>
                         </div>
                     </div>
                     <div class="row item">
-                        <div class="col-md-4 col-sm-12 img"><img class="img-fluid" src="~/uploads/news/@Model.LST2.News[3].Image" /></div>
+                        <div class="col-md-4 col-sm-12 img"><img class="img-fluid" src='@(!String.IsNullOrEmpty(Model.LST2.News[3].Image)?("~/uploads/news/"+Model.LST2.News[3].Image):"~/img/noimage.png")' /></div>
                         <div class="col-md-8 col-sm-12 text">
                             <a href="@Model.LST2.News[3].Url">@Model.LST2.News[3].Name</a>
                         </div>
