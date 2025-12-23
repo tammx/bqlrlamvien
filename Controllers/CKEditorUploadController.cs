@@ -27,15 +27,22 @@ namespace minhlamcons.Controllers
         {
             var filename = DateTime.Now.ToString("yyyyMMddHHmmss") + upload.FileName;
             var newpath = Path.Combine(_hostingEnvironment.WebRootPath, $"uploads\\{path}\\", filename);
-            //var stream = new FileStream(newpath, FileMode.Create);
-            //upload.CopyToAsync(stream);
-            using (var stream = upload.OpenReadStream())
+            
+            if (upload.FileName.EndsWith(".jpg") || upload.FileName.EndsWith(".png") || upload.FileName.EndsWith(".jpeg"))
             {
-                var uploadedImage = Image.FromStream(stream);
-                Size imgSize = ToolExtensions.NewImageSize(uploadedImage.Height, uploadedImage.Width, 1500);
-                var img = ImageResize.Scale(uploadedImage, imgSize.Width, imgSize.Height);
+                using (var stream = upload.OpenReadStream())
+                {
+                    var uploadedImage = Image.FromStream(stream);
+                    Size imgSize = ToolExtensions.NewImageSize(uploadedImage.Height, uploadedImage.Width, 1500);
+                    var img = ImageResize.Scale(uploadedImage, imgSize.Width, imgSize.Height);
 
-                img.SaveAs(newpath);
+                    img.SaveAs(newpath);
+                }
+            }
+            else if (upload.FileName.EndsWith(".pdf") || upload.FileName.EndsWith(".docx") || upload.FileName.EndsWith(".xlsx"))
+            {
+                var stream = new FileStream(newpath, FileMode.Create);
+                upload.CopyToAsync(stream);
             }
             return new JsonResult(new
             {

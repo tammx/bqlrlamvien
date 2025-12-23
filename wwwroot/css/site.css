@@ -31,7 +31,6 @@ html {
     font-size: 14px;
     overflow-x: hidden;
 }
-
 @media (min-width: 768px) {
     html {
         font-size: 16px;
@@ -483,10 +482,10 @@ footer .ico a {
     margin-bottom: 25px;
 }
 
-.tintuchome .item {
-    background-color: #2f9147;
-    color: #fff;
-}
+    .tintuchome .item {
+        background-color: #339f62;
+        color: #fff;
+    }
 .tintuchome .item a {
     color: #fff;
 }

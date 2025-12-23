@@ -9,13 +9,20 @@
 <div class="row">
     @foreach (var image in Model)
     {
-        <div class="col-md-3">
+        <div class="col-md-2">
             <a href="#" class="returnImage" data-url="@image">
-                <img src="@image" id="#image" data-source="@image" width="200" height="200" />
+                @if (image.EndsWith(".jpg") || image.EndsWith(".jpeg") || image.EndsWith(".png"))
+                {
+                    <img src="@image" id="#image" data-source="@image" height="150" />
+                }
+                else if (image.EndsWith(".pdf") || image.EndsWith(".docx") || image.EndsWith(".xlsx"))
+                {
+                    <span>@image</span>
+                }
             </a>
             <form method="post" action="/CKEditorUpload/Delete">
                 <input id="path" name="path" type="hidden" value="@image" />
-                <input type="submit" value="Xóa" class="btn btn-danger" onclick="return confirm('Xóa hình này?')" />
+                <input type="submit" value="Xóa" class="btn btn-danger" onclick="return confirm('Xóa file này?')" />
             </form>
         </div>
     }

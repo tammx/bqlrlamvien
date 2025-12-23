@@ -24,7 +24,7 @@
             <div class="col-md-3">
                 @if (Model.HotNews != null)
                 {
-                    <p class="sidebartitle">DỰ ÁN NỔI BẬT </p>
+                    <p class="sidebartitle">TIN NỔI BẬT </p>
                     <div class="sidebarcontent">
                         @foreach (var news in Model.HotNews)
                         {
@@ -43,3 +43,19 @@
 
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var iframe = $('iframe');
+        var src = iframe.attr('src');
+
+        if (src.indexOf('#') === -1) {
+            iframe.attr('src', src + '#zoom=100');
+        }
+    });
+</script>
+<style>
+    iframe {
+        width: 100%;
+        height: 90vh;
+    }
+</style>
