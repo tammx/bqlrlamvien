@@ -7,6 +7,7 @@ namespace minhlamcons.Services
     {
         Dictionary<SiteSettingCode, string> GetSiteSetting();
         List<string> GetBannerImage();
+        List<string> GetSidebarData();
         List<string> GetYoutubeVideo();
         List<string> GetImageGallery();
         

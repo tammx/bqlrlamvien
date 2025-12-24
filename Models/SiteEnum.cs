@@ -60,6 +60,8 @@ namespace minhlamcons.Models
 
         [Description("Hình banner trang chủ")]
         SLIDER_1 = 18,
+        [Description("Hình sidebar bên phải")]
+        SLIDER_2 = 19,
         //[Description("Banner 2")]
         //SLIDER_2 = 19,
         //[Description("Banner 3")]
@@ -80,8 +82,8 @@ namespace minhlamcons.Models
         SLIDER = 28,
 
         [Description("Trang chủ - Dịch vụ của chúng tôi")]
-        HOME_B1 = 30,
-        [Description("Trang chủ - Tại sao nên lựa chọn")]
+        //HOME_B1 = 30,
+        //[Description("Trang chủ - Tại sao nên lựa chọn")]
         HOME_B2 = 31,
         [Description("Trang chủ - Video")]
         HOME_B3 = 32,
@@ -102,5 +104,8 @@ namespace minhlamcons.Models
         YT_VIDEO = 40,
         [Description("Album ảnh")]
         IMG_GALLERY = 41,
+
+        [Description("Sidebar bên phải")]
+        SIDEBAR_IMG = 50,
     };
 }

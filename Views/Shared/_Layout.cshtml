@@ -2,6 +2,7 @@
 @{ 
     var header = PartialService.GetHeader();
     var slider = PartialService.GetSlider();
+    var sidebar = PartialService.GetSidebar();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +26,16 @@
         @Html.Partial("_Slider", slider)
     </header>
     <main role="main" class="pb-3">
-        @RenderBody()
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    @RenderBody()
+                </div>
+                <div class="col-3">
+                    @Html.Partial("_RightBanner", sidebar)
+                </div>
+            </div>
+        </div>
     </main>
     @Html.Partial("_Footer")
     <!-- Messenger Plugin chat Code -->

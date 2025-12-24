@@ -24,6 +24,7 @@ namespace minhlamcons.Services
             }
             return rs;
         }
+        
         //public FooterViewModel GetFooter()
         //{
         //    return new FooterViewModel { Email = "abc" };
@@ -32,20 +33,35 @@ namespace minhlamcons.Services
         {
             var slogan = _db.TbSiteSettings.FirstOrDefault(x => !x.Delete && x.Id == SiteSettingCode.SLOGAN).Content;
             ISiteSettingService data = new SiteSettingService(_db);
-            var rs = data.GetBannerImage().Where(x=>x!="").ToList();
+            List<string> rs = new List<string>();
+            List<string> tmp = data.GetBannerImage();
+            if (tmp!=null)
+                rs = data.GetBannerImage().Where(x => x != "").ToList();
             return new SliderViewModel { LstBanner = rs, Slogan = slogan };
+        }
+        public List<string> GetSidebar()
+        {
+            ISiteSettingService data = new SiteSettingService(_db);
+            List<string> tmp = data.GetSidebarData();
+            if(tmp!=null)
+                return tmp.Where(x => x != "").ToList();
+            return new List<string>();
         }
         public List<string> GetYoutubeVideo()
         {
             ISiteSettingService data = new SiteSettingService(_db);
-            var rs = data.GetYoutubeVideo().Where(x => x != "").ToList();
-            return rs;
+            List<string> tmp = data.GetYoutubeVideo();
+            if (tmp != null)
+                return tmp.Where(x => x != "").ToList();
+            return new List<string>();
         }
         public List<string> GetImageGallery()
         {
             ISiteSettingService data = new SiteSettingService(_db);
-            var rs = data.GetImageGallery().Where(x => x != "").ToList();
-            return rs;
+            List<string> tmp = data.GetImageGallery();
+            if (tmp != null)
+                return tmp.Where(x => x != "").ToList();
+            return new List<string>();
         }
         
     }

@@ -5,7 +5,7 @@ a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
-    margin-right: 35px;
+    /*margin-right: 35px;*/
 }
 
 /* Provide sufficient contrast against white background */
@@ -636,70 +636,86 @@ a.nav-link {
     width: 100% !important;
     height: auto !important;
 }
-
-@media all and (min-width: 992px) {
-    .perfect-1 {
-        display:block;
-    }
-    .perfect-2 {
-        display: none;
-    }
-    .navbar .nav-item .dropdown-menu {
-        display: none;
-    }
-
-    .navbar .nav-item:hover .nav-link {
-    }
-
-    .navbar .nav-item:hover .dropdown-menu {
-        display: block;
-    }
-
-    .navbar .nav-item .dropdown-menu {
-        margin-top: 0;
-    }
-
-    .bignews {
-        margin-left: -15px;
-    }
-
-    .wrap_partner {
-        margin-left: -15px !important;
-        margin-right: -15px !important;
-    }
+.rightbannerbox {
+    padding-bottom:10px;
+    margin-bottom:10px;
+    border-bottom:dashed 1px #ccc;
+}
+.rightbannerbox img {
+    width:100%;
 }
 
-@media (max-width: 480px) {
-    .footerlogo {
-        display: none;
-    }
-    #frmYoutube {
-        height: 250px;
-    }
-    .tintuchome .item img {
-        height: auto!important;
-    }
-    .tintuchome .item .text {
-        padding:10px;
-    }
-    
-    #search {
-        margin-bottom:15px;
-    }
-    .aboutus .des {
-        border-left: none;
-    }
-    .perfect-1 {
-        display: none;
+    @media all and (min-width: 992px) {
+        .perfect-1 {
+            display: block;
+        }
+
+        .perfect-2 {
+            display: none;
+        }
+
+        .navbar .nav-item .dropdown-menu {
+            display: none;
+        }
+
+        .navbar .nav-item:hover .nav-link {
+        }
+
+        .navbar .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .navbar .nav-item .dropdown-menu {
+            margin-top: 0;
+        }
+
+        .bignews {
+            margin-left: -15px;
+        }
+
+        .wrap_partner {
+            margin-left: -15px !important;
+            margin-right: -15px !important;
+        }
     }
 
-    .perfect-2 {
-        display: block;
+    @media (max-width: 480px) {
+        .footerlogo {
+            display: none;
+        }
+
+        #frmYoutube {
+            height: 250px;
+        }
+
+        .tintuchome .item img {
+            height: auto !important;
+        }
+
+        .tintuchome .item .text {
+            padding: 10px;
+        }
+
+        #search {
+            margin-bottom: 15px;
+        }
+
+        .aboutus .des {
+            border-left: none;
+        }
+
+        .perfect-1 {
+            display: none;
+        }
+
+        .perfect-2 {
+            display: block;
+        }
+
+        .tintuchome .item {
+            padding: 0;
+            margin: 0;
+            margin-top: 10px;
+            width: 95%;
+        }
     }
-    .tintuchome .item {
-        padding:0;
-        margin:0;
-        margin-top:10px;
-        width:95%;
-    }
-}

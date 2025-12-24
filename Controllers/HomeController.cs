@@ -68,7 +68,7 @@ namespace minhlamcons.Controllers
             ISiteSettingService siteSettingService = new SiteSettingService(_db);
             var siteSettingValue = siteSettingService.GetSiteSetting();
 
-            data.HOME_B1 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B1) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B1] : "";
+            //data.HOME_B1 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B1) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B1] : "";
             data.HOME_B2 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B2) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B2] : "";
             data.HOME_B3 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B3) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B3] : "";
             data.HOME_B4 = siteSettingValue.ContainsKey(minhlamcons.Models.SiteSettingCode.HOME_B4) ? siteSettingValue[minhlamcons.Models.SiteSettingCode.HOME_B4] : "";

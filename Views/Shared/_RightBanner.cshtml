@@ -1,0 +1,13 @@
+﻿@model List<string>
+<div class="row">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-12 rightbannerbox">
+                @Html.Raw(item)
+            </div>
+        }
+    }
+</div>
+
