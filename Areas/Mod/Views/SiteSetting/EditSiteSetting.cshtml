@@ -56,7 +56,7 @@
                         <button type="button" class="btn btn-danger btn-remove-img" onclick="removeImage()">Remove</button>
                         <div class="custom-file"><input class="form-control custom-file-input" id="image-slider" accept="image/*" type="file" onchange="uploadBanerImage();" /></div>
                     }
-                    else if (Model.Id == SiteSettingCode.IMG_GALLERY)
+                    else if (Model.Id == SiteSettingCode.IMG_GALLERY || Model.Id == SiteSettingCode.SLIDER_2)
                     {
                         <label>Nội dung</label>
                         var banerImage = Model.Content?.Split(',');
