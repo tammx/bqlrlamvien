@@ -34,10 +34,10 @@
                             
                             @foreach (var news in item.LstNews)
                             {
-                                <div class="row">
+                                <div class="row" style="margin-bottom:15px">
                                     <div class="col-md-2">
                                         <a href="@news.Url">
-                                            <img class="img-fluid" style="height:126px" src="~/uploads/news/@news.Image" />
+                                            <img class="img-fluid" style="max-height:126px" src="~/uploads/news/@news.Image" />
                                         </a>
                                     </div>
                                     <div class="col-md-10">
