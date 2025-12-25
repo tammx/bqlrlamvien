@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            <div class="col-md-9 newsDetail">
+            <div class="col-md-12 newsDetail">
                 @if (Model.News != null)
                 {
                     <p class="posttitle">@Model.News.Name</p>
@@ -19,26 +19,34 @@
                     <p>@Html.Raw(minhlamcons.Extensions.StringProcessingExtenssion.processed_img(Model.News.Content))</p>
                 }
             </div>
-            <div class="col-md-3">
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 @if (Model.HotNews != null)
                 {
-                    <p class="sidebartitle">TIN NỔI BẬT </p>
+                    <p class="sidebartitle">TIN NỔI BẬT</p>
                     <div class="sidebarcontent">
                         @foreach (var news in Model.HotNews)
                         {
-                            <div class="item">
-                                <a href="@news.Url">
-                                    <img class="img-fluid" style="height:126px" src="~/uploads/news/@news.Image" />
-                                    <div>@news.Name</div>
-                                </a>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <a href="@news.Url">
+                                        <img class="img-fluid" style="height:126px" src="~/uploads/news/@news.Image" />
+                                    </a>
+                                </div>
+                                <div class="col-md-10">
+                                    <a href="@news.Url">@news.Name</a>
+                                    <div>
+                                        @news.Des
+                                    </div>
+                                </div>
                             </div>
-
                         }
                     </div>
                 }
             </div>
         </div>
-
     </div>
 </div>
 <script type="text/javascript">
